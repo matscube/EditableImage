@@ -13,6 +13,7 @@
 		216120FE1A477EDB00C7C139 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 216120FD1A477EDB00C7C139 /* Images.xcassets */; };
 		216121011A477EDB00C7C139 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216120FF1A477EDB00C7C139 /* LaunchScreen.xib */; };
 		2161210D1A477EDB00C7C139 /* EditableImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2161210C1A477EDB00C7C139 /* EditableImageTests.swift */; };
+		216121251A48A65700C7C139 /* editable-image-button-delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 216121241A48A65700C7C139 /* editable-image-button-delete.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		216121061A477EDB00C7C139 /* EditableImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EditableImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2161210B1A477EDB00C7C139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2161210C1A477EDB00C7C139 /* EditableImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableImageTests.swift; sourceTree = "<group>"; };
+		216121241A48A65700C7C139 /* editable-image-button-delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "editable-image-button-delete.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		216120F31A477EDB00C7C139 /* EditableImage */ = {
 			isa = PBXGroup;
 			children = (
+				216121241A48A65700C7C139 /* editable-image-button-delete.png */,
 				216120F61A477EDB00C7C139 /* AppDelegate.swift */,
 				216120F81A477EDB00C7C139 /* ViewController.swift */,
 				216120FA1A477EDB00C7C139 /* Main.storyboard */,
@@ -192,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				216121251A48A65700C7C139 /* editable-image-button-delete.png in Resources */,
 				216120FC1A477EDB00C7C139 /* Main.storyboard in Resources */,
 				216121011A477EDB00C7C139 /* LaunchScreen.xib in Resources */,
 				216120FE1A477EDB00C7C139 /* Images.xcassets in Resources */,
@@ -405,6 +409,7 @@
 				216121121A477EDB00C7C139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		216121131A477EDB00C7C139 /* Build configuration list for PBXNativeTarget "EditableImageTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				216121151A477EDB00C7C139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
