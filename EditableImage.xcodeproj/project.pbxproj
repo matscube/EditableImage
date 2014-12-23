@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		213DC43A1A49DCD500E5DC85 /* editable-image-button-control.png in Resources */ = {isa = PBXBuildFile; fileRef = 213DC4391A49DCD500E5DC85 /* editable-image-button-control.png */; };
 		216120F71A477EDB00C7C139 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216120F61A477EDB00C7C139 /* AppDelegate.swift */; };
 		216120F91A477EDB00C7C139 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216120F81A477EDB00C7C139 /* ViewController.swift */; };
 		216120FC1A477EDB00C7C139 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216120FA1A477EDB00C7C139 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		213DC4391A49DCD500E5DC85 /* editable-image-button-control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "editable-image-button-control.png"; sourceTree = "<group>"; };
 		216120F11A477EDB00C7C139 /* EditableImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EditableImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216120F51A477EDB00C7C139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		216120F61A477EDB00C7C139 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		216120F31A477EDB00C7C139 /* EditableImage */ = {
 			isa = PBXGroup;
 			children = (
+				213DC4391A49DCD500E5DC85 /* editable-image-button-control.png */,
 				216121241A48A65700C7C139 /* editable-image-button-delete.png */,
 				216120F61A477EDB00C7C139 /* AppDelegate.swift */,
 				216120F81A477EDB00C7C139 /* ViewController.swift */,
@@ -197,6 +200,7 @@
 			files = (
 				216121251A48A65700C7C139 /* editable-image-button-delete.png in Resources */,
 				216120FC1A477EDB00C7C139 /* Main.storyboard in Resources */,
+				213DC43A1A49DCD500E5DC85 /* editable-image-button-control.png in Resources */,
 				216121011A477EDB00C7C139 /* LaunchScreen.xib in Resources */,
 				216120FE1A477EDB00C7C139 /* Images.xcassets in Resources */,
 			);
