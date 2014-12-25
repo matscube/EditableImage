@@ -17,5 +17,24 @@ class EditableImageView: UIView {
         // Drawing code
     }
     */
+    
+    deinit {
+        
+    }
+    
+    private var imageView = UIImageView()
+    private var frameView: FrameView!
+    init(frame: CGRect, image: UIImage) {
+        super.init(frame: frame)
+        imageView.image = image
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    class FrameView: UIView {
+        
+    }
 
 }
