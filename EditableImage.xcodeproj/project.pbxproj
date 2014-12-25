@@ -15,6 +15,7 @@
 		216121011A477EDB00C7C139 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216120FF1A477EDB00C7C139 /* LaunchScreen.xib */; };
 		2161210D1A477EDB00C7C139 /* EditableImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2161210C1A477EDB00C7C139 /* EditableImageTests.swift */; };
 		216121251A48A65700C7C139 /* editable-image-button-delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 216121241A48A65700C7C139 /* editable-image-button-delete.png */; };
+		F62AFDFE1A4C39D800860603 /* EditableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62AFDFD1A4C39D800860603 /* EditableImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		2161210B1A477EDB00C7C139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2161210C1A477EDB00C7C139 /* EditableImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableImageTests.swift; sourceTree = "<group>"; };
 		216121241A48A65700C7C139 /* editable-image-button-delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "editable-image-button-delete.png"; sourceTree = "<group>"; };
+		F62AFDFD1A4C39D800860603 /* EditableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				216120FD1A477EDB00C7C139 /* Images.xcassets */,
 				216120FF1A477EDB00C7C139 /* LaunchScreen.xib */,
 				216120F41A477EDB00C7C139 /* Supporting Files */,
+				F62AFDFD1A4C39D800860603 /* EditableImageView.swift */,
 			);
 			path = EditableImage;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F62AFDFE1A4C39D800860603 /* EditableImageView.swift in Sources */,
 				216120F91A477EDB00C7C139 /* ViewController.swift in Sources */,
 				216120F71A477EDB00C7C139 /* AppDelegate.swift in Sources */,
 			);
