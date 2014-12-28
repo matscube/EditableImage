@@ -27,6 +27,11 @@ class EditableImageView: UIView {
     init(frame: CGRect, image: UIImage) {
         super.init(frame: frame)
         imageView.image = image
+  
+        let imageScale: CGFloat = 0.7
+        imageView.frame = CGRectMake(0, 0, frame.width * imageScale, frame.height * imageScale)
+        imageView.center = CGPointMake(frame.width / 2, frame.height / 2)
+        addSubview(imageView)
     }
 
     required init(coder aDecoder: NSCoder) {
