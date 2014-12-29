@@ -45,7 +45,7 @@ class EditableImageView: UIView {
     private let controlButtonImage = UIImage(named: "editable-image-button-control")
     private let removeButton = UIButton()
     private let controlButton = UIButton()
-    private let buttonSize: CGFloat = 20
+    private let buttonSize: CGFloat = 30
     
     private var imageView = UIImageView()
     private var frameView: FrameView!
@@ -53,25 +53,21 @@ class EditableImageView: UIView {
         super.init(frame: frame)
         imageView.image = image
   
-        let imageScale: CGFloat = 0.7
-        imageView.frame = CGRectMake(0, 0, frame.width * imageScale, frame.height * imageScale)
-        imageView.center = CGPointMake(frame.width / 2, frame.height / 2)
         addSubview(imageView)
         
         frameView = FrameView(mainView: self, margin: 0)
-        layoutFrameView()
         addSubview(frameView)
         
-        removeButton.frame = CGRectMake(0, 0, buttonSize, buttonSize)
         removeButton.addTarget(self, action: "remove", forControlEvents: UIControlEvents.TouchUpInside)
         removeButton.setImage(removeButtonImage, forState: UIControlState.Normal)
         addSubview(removeButton)
 
-        controlButton.frame = CGRectMake(frame.width - buttonSize, frame.height - buttonSize, buttonSize, buttonSize)
         controlButton.setImage(controlButtonImage, forState: UIControlState.Normal)
         let controlGestureRecognizer = UIPanGestureRecognizer(target: self, action: "control:")
         controlButton.addGestureRecognizer(controlGestureRecognizer)
         addSubview(controlButton)
+        
+        clipsToBounds = false
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -80,13 +76,16 @@ class EditableImageView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layoutFrameView()
-    }
-    
-    func layoutFrameView() {
-        let frameWidth: CGFloat = frame.width - buttonSize
-        let frameHeight: CGFloat = frame.height - buttonSize
-        frameView.frame = CGRectMake(buttonSize / 2, buttonSize / 2, frameWidth, frameHeight)
+        
+        let superWidth: CGFloat = bounds.width
+        let superHeight: CGFloat = bounds.height
+        frameView.frame = CGRectMake(buttonSize / 2, buttonSize / 2, superWidth - buttonSize, superHeight - buttonSize)
+
+        let imageScale: CGFloat = 0.7
+        imageView.frame = CGRectMake(0, 0, (superWidth - buttonSize) * imageScale, (superHeight - buttonSize) * imageScale)
+        imageView.center = CGPointMake(superWidth / 2, superHeight / 2)
+        removeButton.frame = CGRectMake(0, 0, buttonSize, buttonSize)
+        controlButton.frame = CGRectMake(superWidth - buttonSize, superHeight - buttonSize, buttonSize, buttonSize)
     }
     
     func remove() {
@@ -96,6 +95,7 @@ class EditableImageView: UIView {
     
     private var baseTransform: CGAffineTransform?
     private var baseCenter: CGPoint?
+    private var baseBounds: CGRect?
     private var touchLocation: CGPoint?
     func control(sender: UIGestureRecognizer) {
         if sender.state == UIGestureRecognizerState.Began {
@@ -103,6 +103,7 @@ class EditableImageView: UIView {
             touchLocation = sender.locationInView(superview)
             baseTransform = transform
             baseCenter = CGPointMake(frame.origin.x + frame.width / 2, frame.origin.y + frame.height / 2)
+            baseBounds = bounds
         } else if sender.state == UIGestureRecognizerState.Changed {
             let curLocation = sender.locationInView(superview)
             let beforeVector = CGPointMake(touchLocation!.x - baseCenter!.x, touchLocation!.y - baseCenter!.y)
@@ -122,10 +123,14 @@ class EditableImageView: UIView {
             
             println("angle: \(angle)")
             println("scale: \(scale)")
-            
-            var afterTransform = CGAffineTransformScale(baseTransform!, scale, scale)
-            afterTransform = CGAffineTransformRotate(afterTransform, angle)
-            transform = afterTransform
+
+            // layout angle
+            var rotatedTransform = CGAffineTransformRotate(baseTransform!, angle)
+            transform = rotatedTransform
+
+            // layout scale
+            bounds = CGRectMake(0, 0, (baseBounds!.width - buttonSize) * scale + buttonSize, (baseBounds!.height - buttonSize) * scale + buttonSize)
+            center = baseCenter!
         }
     }
     
@@ -156,6 +161,11 @@ class EditableImageView: UIView {
             backgroundColor = UIColor.clearColor()
             self.margin = margin
         }
+        
+        override func layoutSubviews() {
+            super.layoutSubviews()
+            setNeedsDisplayInRect(bounds)
+        }
 
         required init(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
@@ -170,7 +180,7 @@ class EditableImageView: UIView {
             let maxY = CGRectGetMaxY(rect) - margin
             
             CGContextSetStrokeColorWithColor(context, borderSubColor.CGColor)
-            CGContextSetLineWidth(context, 4)
+            CGContextSetLineWidth(context, 8)
             CGContextMoveToPoint(context, minX, minY)
             CGContextAddLineToPoint(context, minX, maxY)
             CGContextAddLineToPoint(context, maxX, maxY)
@@ -181,7 +191,7 @@ class EditableImageView: UIView {
             CGContextStrokePath(context)
             
             CGContextSetStrokeColorWithColor(context, borderMainColor.CGColor)
-            CGContextSetLineWidth(context, 2)
+            CGContextSetLineWidth(context, 6)
             CGContextMoveToPoint(context, minX, minY)
             CGContextAddLineToPoint(context, minX, maxY)
             CGContextAddLineToPoint(context, maxX, maxY)
