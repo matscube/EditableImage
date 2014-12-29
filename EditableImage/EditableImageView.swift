@@ -19,7 +19,7 @@ class EditableImageView: UIView {
     */
     
     deinit {
-        
+        NSLog("EditableImageView deinit")
     }
     
     private var _isEditable: Bool = false
@@ -30,15 +30,21 @@ class EditableImageView: UIView {
         set {
             _isEditable = newValue
             if _isEditable {
-                
+                removeButton.hidden = false
+                controlButton.hidden = false
+                frameView.hidden = false
             } else {
-                
+                removeButton.hidden = true
+                controlButton.hidden = true
+                frameView.hidden = true
             }
         }
     }
     
     private let removeButtonImage = UIImage(named: "editable-image-button-delete")
     private let controlButtonImage = UIImage(named: "editable-image-button-control")
+    private let removeButton = UIButton()
+    private let controlButton = UIButton()
     private let buttonSize: CGFloat = 20
     
     private var imageView = UIImageView()
@@ -56,13 +62,11 @@ class EditableImageView: UIView {
         layoutFrameView()
         addSubview(frameView)
         
-        let removeButton = UIButton()
         removeButton.frame = CGRectMake(0, 0, buttonSize, buttonSize)
         removeButton.addTarget(self, action: "remove", forControlEvents: UIControlEvents.TouchUpInside)
         removeButton.setImage(removeButtonImage, forState: UIControlState.Normal)
         addSubview(removeButton)
 
-        let controlButton = UIButton()
         controlButton.frame = CGRectMake(frame.width - buttonSize, frame.height - buttonSize, buttonSize, buttonSize)
         controlButton.setImage(controlButtonImage, forState: UIControlState.Normal)
         let controlGestureRecognizer = UIPanGestureRecognizer(target: self, action: "control:")
@@ -86,7 +90,8 @@ class EditableImageView: UIView {
     }
     
     func remove() {
-        println("hoge")
+        NSLog("EditableImage is removed")
+        removeFromSuperview()
     }
     
     private var baseTransform: CGAffineTransform?
@@ -137,7 +142,7 @@ class EditableImageView: UIView {
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        isEditable = false
+        isEditable = !isEditable
     }
     
     
