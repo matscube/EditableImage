@@ -16,6 +16,9 @@ class ViewController: UIViewController {
         
         let editableIV = EditableImageView(frame: CGRectMake(100, 100, 100, 100), image: UIImage(named: "editable-image-button-control"))
         view.addSubview(editableIV)
+
+        let editableIV2 = EditableImageView(frame: CGRectMake(100, 100, 100, 100), image: UIImage(named: "editable-image-button-control"))
+        view.addSubview(editableIV2)
     }
 
     override func didReceiveMemoryWarning() {
