@@ -10,15 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var sample1VC = Sample1ViewController()
+    var sample2VC = Sample2ViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let editableIV = EditableImageView(frame: CGRectMake(100, 100, 100, 100), image: UIImage(named: "editable-image-button-control"))
-        view.addSubview(editableIV)
-
-        let editableIV2 = EditableImageView(frame: CGRectMake(100, 100, 100, 100), image: UIImage(named: "editable-image-button-control"))
-        view.addSubview(editableIV2)
+        
+        addChildViewController(sample1VC)
+        addChildViewController(sample2VC)
+        view.addSubview(sample1VC.view)
     }
 
     override func didReceiveMemoryWarning() {
