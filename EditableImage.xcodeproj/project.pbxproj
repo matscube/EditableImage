@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		213DC43A1A49DCD500E5DC85 /* editable-image-button-control.png in Resources */ = {isa = PBXBuildFile; fileRef = 213DC4391A49DCD500E5DC85 /* editable-image-button-control.png */; };
 		216120F71A477EDB00C7C139 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216120F61A477EDB00C7C139 /* AppDelegate.swift */; };
-		216120F91A477EDB00C7C139 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216120F81A477EDB00C7C139 /* ViewController.swift */; };
 		216120FC1A477EDB00C7C139 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216120FA1A477EDB00C7C139 /* Main.storyboard */; };
 		216120FE1A477EDB00C7C139 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 216120FD1A477EDB00C7C139 /* Images.xcassets */; };
 		216121011A477EDB00C7C139 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216120FF1A477EDB00C7C139 /* LaunchScreen.xib */; };
@@ -36,7 +35,6 @@
 		216120F11A477EDB00C7C139 /* EditableImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EditableImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216120F51A477EDB00C7C139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		216120F61A477EDB00C7C139 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		216120F81A477EDB00C7C139 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		216120FB1A477EDB00C7C139 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		216120FD1A477EDB00C7C139 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		216121001A477EDB00C7C139 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 				213DC4391A49DCD500E5DC85 /* editable-image-button-control.png */,
 				216121241A48A65700C7C139 /* editable-image-button-delete.png */,
 				216120F61A477EDB00C7C139 /* AppDelegate.swift */,
-				216120F81A477EDB00C7C139 /* ViewController.swift */,
 				216120FA1A477EDB00C7C139 /* Main.storyboard */,
 				216120FD1A477EDB00C7C139 /* Images.xcassets */,
 				216120FF1A477EDB00C7C139 /* LaunchScreen.xib */,
@@ -236,7 +233,6 @@
 				F62AFDFE1A4C39D800860603 /* EditableImageView.swift in Sources */,
 				21AEE8721A56D49400B009DC /* Sample2ViewController.swift in Sources */,
 				21AEE8741A56D56D00B009DC /* TabBarController.swift in Sources */,
-				216120F91A477EDB00C7C139 /* ViewController.swift in Sources */,
 				216120F71A477EDB00C7C139 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
