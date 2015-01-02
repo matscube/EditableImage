@@ -14,7 +14,6 @@ class Sample2ViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "sample2"
     }
 
     override func didReceiveMemoryWarning() {

@@ -18,6 +18,11 @@ class TabBarController: UITabBarController {
         var sample1VC = Sample1ViewController()
         var sample2VC = Sample2ViewController()
         self.setViewControllers([sample1VC, sample2VC], animated: true)
+
+        var tabItem1 = UITabBarItem(title: "Sample1", image: nil, tag: 0)
+        var tabItem2 = UITabBarItem(title: "Sample2", image: nil, tag: 1)
+        sample1VC.tabBarItem = tabItem1
+        sample2VC.tabBarItem = tabItem2
     }
 
     override func didReceiveMemoryWarning() {

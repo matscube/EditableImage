@@ -99,6 +99,7 @@ class EditableImageView: UIView {
     private var touchLocation: CGPoint?
     func control(sender: UIGestureRecognizer) {
         if sender.state == UIGestureRecognizerState.Began {
+            superview?.bringSubviewToFront(self)
             println("control began")
             touchLocation = sender.locationInView(superview)
             baseTransform = transform
@@ -135,6 +136,7 @@ class EditableImageView: UIView {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        superview?.bringSubviewToFront(self)
         let touch = touches.anyObject() as UITouch
         touchLocation = touch.locationInView(superview)
         baseCenter = center

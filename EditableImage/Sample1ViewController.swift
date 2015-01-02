@@ -12,11 +12,10 @@ class Sample1ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "sample1"
-        
 
         // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.whiteColor()
+
         let editableIV = EditableImageView(frame: CGRectMake(100, 100, 100, 100), image: UIImage(named: "editable-image-button-control"))
         view.addSubview(editableIV)
         
