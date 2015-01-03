@@ -16,11 +16,25 @@ class Sample1ViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.whiteColor()
 
-        let editableIV = EditableImageView(frame: CGRectMake(100, 100, 100, 100), image: UIImage(named: "editable-image-button-control"))
+        let editableIV = EditableImageView(frame: CGRectMake(100, 50, 100, 100), image: UIImage(named: "editable-image-button-control"))
         view.addSubview(editableIV)
         
-        let editableIV2 = EditableImageView(frame: CGRectMake(100, 100, 100, 100), image: UIImage(named: "editable-image-button-control"))
-        view.addSubview(editableIV2)
+        let button = UIButton()
+        button.frame = CGRectMake(0, 0, 100, 50)
+        button.center = CGPointMake(view.frame.width / 2, view.frame.height - 100)
+        button.addTarget(self, action: "addImageView", forControlEvents: UIControlEvents.TouchUpInside)
+        button.setTitle("Add Image", forState: UIControlState.Normal)
+        button.layer.borderWidth = 2
+        let color = UIColor(red: 0x1b/255, green: 0x9a/255, blue: 0xf7/255, alpha: 1)
+        button.layer.borderColor = color.CGColor
+        button.setTitleColor(color, forState: UIControlState.Normal)
+        button.layer.cornerRadius = 5
+        view.addSubview(button)
+    }
+    
+    func addImageView() {
+        let editable = EditableImageView(frame: CGRectMake(100, 100, 100, 100), image: UIImage(named: "editable-image-button-control"))
+        view.addSubview(editable)
     }
 
     override func didReceiveMemoryWarning() {
