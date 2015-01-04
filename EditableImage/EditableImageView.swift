@@ -88,6 +88,10 @@ class EditableImageView: UIView {
         controlButton.frame = CGRectMake(superWidth - buttonSize, superHeight - buttonSize, buttonSize, buttonSize)
     }
     
+    func getImage() -> UIImage {
+        return imageView.image!
+    }
+    
     func remove() {
         NSLog("EditableImage is removed")
         removeFromSuperview()
