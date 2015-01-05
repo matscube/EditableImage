@@ -21,7 +21,7 @@ class Sample1ViewController: UIViewController {
         
         let button = UIButton()
         button.frame = CGRectMake(0, 0, 100, 50)
-        button.center = CGPointMake(view.frame.width / 2, view.frame.height - 100)
+        button.center = CGPointMake(view.frame.width / 2, view.frame.height - 170)
         button.addTarget(self, action: "addImageView", forControlEvents: UIControlEvents.TouchUpInside)
         button.setTitle("Add Image", forState: UIControlState.Normal)
         button.layer.borderWidth = 2
@@ -30,11 +30,27 @@ class Sample1ViewController: UIViewController {
         button.setTitleColor(color, forState: UIControlState.Normal)
         button.layer.cornerRadius = 5
         view.addSubview(button)
+
+        let button2 = UIButton()
+        button2.frame = CGRectMake(0, 0, 100, 50)
+        button2.center = CGPointMake(view.frame.width / 2, view.frame.height - 100)
+        button2.addTarget(self, action: "getImage", forControlEvents: UIControlEvents.TouchUpInside)
+        button2.setTitle("Get Image", forState: UIControlState.Normal)
+        button2.layer.borderWidth = 2
+        let color2 = UIColor(red: 0xfe/255, green: 0xae/255, blue: 0x1b/255, alpha: 1)
+        button2.layer.borderColor = color2.CGColor
+        button2.setTitleColor(color2, forState: UIControlState.Normal)
+        button2.layer.cornerRadius = 5
+        view.addSubview(button2)
     }
     
     func addImageView() {
         let editable = EditableImageView(frame: CGRectMake(100, 100, 100, 100), image: UIImage(named: "editable-image-button-control"))
         view.addSubview(editable)
+    }
+    
+    func getImage() {
+        
     }
 
     override func didReceiveMemoryWarning() {
