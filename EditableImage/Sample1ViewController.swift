@@ -16,7 +16,7 @@ class Sample1ViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.whiteColor()
 
-        let editableIV = EditableImageView(frame: CGRectMake(100, 50, 100, 100), image: UIImage(named: "editable-image-button-control"))
+        let editableIV = EditableImageView(frame: CGRectMake(100, 50, 100, 100), image: UIImage(named: "editable-image-button-control")!)
         view.addSubview(editableIV)
         
         let button = UIButton()
@@ -45,7 +45,7 @@ class Sample1ViewController: UIViewController {
     }
     
     func addImageView() {
-        let editable = EditableImageView(frame: CGRectMake(100, 100, 100, 100), image: UIImage(named: "editable-image-button-control"))
+        let editable = EditableImageView(frame: CGRectMake(100, 100, 100, 100), image: UIImage(named: "editable-image-button-control")!)
         view.addSubview(editable)
     }
     

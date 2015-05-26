@@ -139,33 +139,33 @@ class EditableImageView: UIView {
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         superview?.bringSubviewToFront(self)
-        let touch = touches.anyObject() as UITouch
+        let touch = touches.first as! UITouch
         touchLocation = touch.locationInView(superview)
         baseCenter = center
     }
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        let touch = touches.anyObject() as UITouch
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        let touch = touches.first as! UITouch
         let curLocation = touch.locationInView(superview)
         center.x = baseCenter!.x + (curLocation.x - touchLocation!.x)
         center.y = baseCenter!.y + (curLocation.y - touchLocation!.y)
     }
     
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         isEditable = !isEditable
     }
     
     
     private class FrameView: UIView {
-        let margin: CGFloat!
+        let margin: CGFloat
         let borderMainColor = UIColor.grayColor()
         let borderSubColor = UIColor.whiteColor()
         
         init(mainView: UIView, margin: CGFloat) {
-            super.init(frame: CGRectMake(0, 0, frame.width, frame.height))
-            backgroundColor = UIColor.clearColor()
             self.margin = margin
+            super.init(frame: mainView.frame)
+            backgroundColor = UIColor.clearColor()
         }
         
         override func layoutSubviews() {
